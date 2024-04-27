@@ -4,7 +4,7 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	output Gotejamento, Aspersao, Erro, Alarme, ValvulaEntrada, SaidaMux;
    
 	wire segmentoA_NivelCaixa, segmentoB_NivelCaixa, segmentoC_NivelCaixa, segmentoD_NivelCaixa, segmentoE_NivelCaixa, segmentoF_NivelCaixa, segmentoG_NivelCaixa;
-	wire Aciona_A, Aciona_B, Aciona_C, Aciona_D, Aciona_E, Aciona_F, Aciona_G;
+	wire segmentoA_TipoRega, segmentoB_TipoRega, segmentoC_TipoRega, segmentoD_TipoRega, segmentoE_TipoRega, segmentoF_TipoRega, segmentoG_TipoRega;
 	
 	wire notUmidadeSolo, notMedium, or_notMedium_Temperatura, F4, notUmidadeAr, er;
 	wire A1, notMedium2, notLow, notTemperatura, A5, notHigh;
@@ -64,61 +64,61 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	CodificaAciona Aciona(
 	.Gotejamento(Gotejamento), 
 	.Aspersao(Aspersao), 
-	.Aciona_A(Aciona_A), 
-	.Aciona_B(Aciona_B), 
-	.Aciona_C(Aciona_C), 
-	.Aciona_D(Aciona_D), 
-	.Aciona_E(Aciona_E), 
-	.Aciona_F(Aciona_F), 
-	.Aciona_G(Aciona_G)
+	.segmentoA_TipoRega(segmentoA_TipoRega), 
+	.segmentoB_TipoRega(segmentoB_TipoRega), 
+	.segmentoC_TipoRega(segmentoC_TipoRega), 
+	.segmentoD_TipoRega(segmentoD_TipoRega), 
+	.segmentoE_TipoRega(segmentoE_TipoRega), 
+	.segmentoF_TipoRega(segmentoF_TipoRega), 
+	.segmentoG_TipoRega(segmentoG_TipoRega)
 	);
 
 	// Multiplexadores >>>
 	
 	Multiplexador Mux1(
-	.acio(Aciona_A), 
+	.acio(segmentoA_TipoRega), 
 	.cxa(segmentoA_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 	Multiplexador Mux2(
-	.acio(Aciona_B), 
+	.acio(segmentoB_TipoRega), 
 	.cxa(segmentoB_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 	Multiplexador Mux3(
-	.acio(Aciona_C), 
+	.acio(segmentoC_TipoRega), 
 	.cxa(segmentoC_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 	Multiplexador Mux4(
-	.acio(Aciona_D), 
+	.acio(segmentoD_TipoRega), 
 	.cxa(segmentoD_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 	Multiplexador Mux5(
-	.acio(Aciona_E), 
+	.acio(segmentoE_TipoRega), 
 	.cxa(segmentoE_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 	Multiplexador Mux6(
-	.acio(Aciona_F), 
+	.acio(segmentoF_TipoRega), 
 	.cxa(segmentoF_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 	Multiplexador Mux7(
-	.acio(Aciona_G), 
+	.acio(segmentoG_TipoRega), 
 	.cxa(segmentoG_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
