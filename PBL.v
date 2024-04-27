@@ -8,8 +8,8 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	
 	wire notUmidadeSolo, notMedium, or_notMedium_Temperatura, F4, notUmidadeAr, er;
 	wire A1, notMedium2, notLow, notTemperatura, A5, notHigh;
-	wire E1, E2, E3, E4;
-	wire As1, As2, X1, notAlarme;
+	wire notMedium2, notLow2, and_High_notMedium2, and_Medium_notLow2;
+	wire and_Medium_notTemperatura_notUmidadeSolo, and_notUmidadeSolo_UmidadeAr, or__and_notUmidadeSolo_UmidadeAr__and_Medium_notTemperatura_notUmidadeSolo, notAlarme;
     
 	not(notUmidadeSolo, UmidadeSolo);
 	not(notUmidadeAr, UmidadeAr);
@@ -24,24 +24,24 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	and(Gotejamento, notUmidadeSolo, UmidadeAr, or_notMedium_Temperatura, notAlarme);
     
 	//Sistema de Aspersao
-	and(As1, Medium, notTemperatura, notUmidadeSolo);
-	and(As2, notUmidadeSolo, notUmidadeAr);
-	or(X1, As2, As1);
+	and(and_Medium_notTemperatura_notUmidadeSolo, Medium, notTemperatura, notUmidadeSolo);
+	and(and_notUmidadeSolo_UmidadeAr, notUmidadeSolo, notUmidadeAr);
+	or(or__and_notUmidadeSolo_UmidadeAr__and_Medium_notTemperatura_notUmidadeSolo, and_notUmidadeSolo_UmidadeAr, and_Medium_notTemperatura_notUmidadeSolo);
      not(notAlarme, Alarme);
-     and(Aspersao, X1, notAlarme);
+     and(Aspersao, or__and_notUmidadeSolo_UmidadeAr__and_Medium_notTemperatura_notUmidadeSolo, notAlarme);
     
-	not(E1, Medium);
-	not(E2, Low);
+	not(notMedium2, Medium);
+	not(notLow2, Low);
     
-	and(E3, High, E1);
-	and(E4, Medium, E2);
+	and(and_High_notMedium2, High, notMedium2);
+	and(and_Medium_notLow2, Medium, notLow2);
     
 	//Erro
-	or(Erro, E3, E4);
+	or(Erro, and_High_notMedium2, and_Medium_notLow2);
 	not(er, Erro);
     
 	//Alarme
-	or(Alarme, E2, Erro);
+	or(Alarme, notLow2, Erro);
     
 	//ValvulaEntrada de Agua
 	and(ValvulaEntrada, er, notHigh);
@@ -166,7 +166,7 @@ module CodificaCxa(High, Medium, Low, segmentoA_NivelCaixa, segmentoB_NivelCaixa
     
 endmodule
 
-module Mediumultiplexador(cxa, acio, ChaveSeletora, SaidaMux);
+module Multiplexador(cxa, acio, ChaveSeletora, SaidaMux);
 	input cxa, acio;
 	input ChaveSeletora;
 	output SaidaMux;
