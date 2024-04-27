@@ -3,7 +3,7 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	input UmidadeAr, UmidadeSolo, Temperatura, High, Medium, Low, ChaveSeletora;
 	output Gotejamento, Aspersao, Erro, Alarme, ValvulaEntrada, SaidaMux;
    
-	wire Caixa_A, Caixa_B, Caixa_C, Caixa_D, Caixa_E, Caixa_F, Caixa_G;
+	wire segmentoA_NivelCaixa, segmentoB_NivelCaixa, segmentoC_NivelCaixa, segmentoD_NivelCaixa, segmentoE_NivelCaixa, segmentoF_NivelCaixa, segmentoG_NivelCaixa;
 	wire Aciona_A, Aciona_B, Aciona_C, Aciona_D, Aciona_E, Aciona_F, Aciona_G;
 	
 	wire notUmidadeSolo, notMedium, or_notMedium_Temperatura, F4, notUmidadeAr, er;
@@ -51,13 +51,13 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	.High(High), 
 	.m(m), 
 	.l(l), 
-	.Caixa_A(Caixa_A), 
-	.Caixa_B(Caixa_B), 
-	.Caixa_C(Caixa_C), 
-	.Caixa_D(Caixa_D), 
-	.Caixa_E(Caixa_E), 
-	.Caixa_F(Caixa_F), 
-	.Caixa_G(Caixa_G)
+	.segmentoA_NivelCaixa(segmentoA_NivelCaixa), 
+	.segmentoB_NivelCaixa(segmentoB_NivelCaixa), 
+	.segmentoC_NivelCaixa(segmentoC_NivelCaixa), 
+	.segmentoD_NivelCaixa(segmentoD_NivelCaixa), 
+	.segmentoE_NivelCaixa(segmentoE_NivelCaixa), 
+	.segmentoF_NivelCaixa(segmentoF_NivelCaixa), 
+	.segmentoG_NivelCaixa(segmentoG_NivelCaixa)
 	);
 	
 	// CHighamando o Codificador dos Acionamentos de Irrigação
@@ -77,92 +77,92 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	
 	Multiplexador Mux1(
 	.acio(Aciona_A), 
-	.cxa(Caixa_A), 
+	.cxa(segmentoA_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 	Multiplexador Mux2(
 	.acio(Aciona_B), 
-	.cxa(Caixa_B), 
+	.cxa(segmentoB_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 	Multiplexador Mux3(
 	.acio(Aciona_C), 
-	.cxa(Caixa_C), 
+	.cxa(segmentoC_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 	Multiplexador Mux4(
 	.acio(Aciona_D), 
-	.cxa(Caixa_D), 
+	.cxa(segmentoD_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 	Multiplexador Mux5(
 	.acio(Aciona_E), 
-	.cxa(Caixa_E), 
+	.cxa(segmentoE_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 	Multiplexador Mux6(
 	.acio(Aciona_F), 
-	.cxa(Caixa_F), 
+	.cxa(segmentoF_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 	Multiplexador Mux7(
 	.acio(Aciona_G), 
-	.cxa(Caixa_G), 
+	.cxa(segmentoG_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
 endmodule
 
-module CodificaCxa(High, m, l, Caixa_A, Caixa_B, Caixa_C, Caixa_D, Caixa_E, Caixa_F, Caixa_G);
+module CodificaCxa(High, m, l, segmentoA_NivelCaixa, segmentoB_NivelCaixa, segmentoC_NivelCaixa, segmentoD_NivelCaixa, segmentoE_NivelCaixa, segmentoF_NivelCaixa, segmentoG_NivelCaixa);
     
-	 wire nlow, nmedium, nHighigHigh;
+	 wire notLow, notMedium, notHigh;
 	 
     input l, m, High;
-	 not(nlow, l);
-	 not(nmedium, m);
-	 not(nHighigHigh, High);
+	 not(notLow, l);
+	 not(notMedium, m);
+	 not(notHigh, High);
 	 wire auxe, auxe2;
 	 wire auxf, auxf2;
 	 
-    output Caixa_A, Caixa_B, Caixa_C, Caixa_D, Caixa_E, Caixa_F, Caixa_G;
+    output segmentoA_NivelCaixa, segmentoB_NivelCaixa, segmentoC_NivelCaixa, segmentoD_NivelCaixa, segmentoE_NivelCaixa, segmentoF_NivelCaixa, segmentoG_NivelCaixa;
     
 	 // Letra A
-	 and(Caixa_A, nlow, High);
+	 and(segmentoA_NivelCaixa, notLow, High);
 	 
 	 // Letra B
-	 or(Caixa_B, l, nlow);
+	 or(segmentoB_NivelCaixa, l, notLow);
 	 
 	 // Letra C
-	 or(Caixa_C, l, nlow);
+	 or(segmentoC_NivelCaixa, l, notLow);
 	 
 	 // Letra D
-	 and(Caixa_D, l, nlow);
+	 and(segmentoD_NivelCaixa, l, notLow);
 	 
 	 // Letra E
-	 and(auxe, nlow, High);
+	 and(auxe, notLow, High);
 	 and(auxe2, m, High);
-	 or(Caixa_E, auxe, auxe2);
+	 or(segmentoE_NivelCaixa, auxe, auxe2);
 	 
 	 // Letra F
-	 and(auxf, nlow, High);
+	 and(auxf, notLow, High);
 	 and(auxf2, m, High);
-	 or(Caixa_F, auxf, auxf2);
+	 or(segmentoF_NivelCaixa, auxf, auxf2);
 	 
 	 // Letra G
-	 and(Caixa_G, nlow, nmedium, nHighigHigh);
+	 and(segmentoG_NivelCaixa, notLow, notMedium, notHigh);
     
 endmodule
 
