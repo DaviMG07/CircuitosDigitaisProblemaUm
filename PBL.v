@@ -23,7 +23,7 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	or(or_notMedium_Temperatura, notMedium, Temperatura);
 	and(Gotejamento, notUmidadeSolo, UmidadeAr, or_notMedium_Temperatura, notAlarme);
     
-	// ChaveSeletoraistema de Aspersao
+	//Sistema de Aspersao
 	and(As1, m, notTemperatura, notUmidadeSolo);
 	and(As2, notUmidadeSolo, notUmidadeAr);
 	or(X1, As2, As1);
@@ -36,7 +36,7 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	and(E3, High, E1);
 	and(E4, m, E2);
     
-	// Erro
+	//Erro
 	or(Erro, E3, E4);
 	not(er, Erro);
     
@@ -45,8 +45,8 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
     
 	//ValvulaEntrada de Agua
 	and(ValvulaEntrada, er, notHigh);
-	// ----------------------------------------------------
-	// CHighamando o Codificador da Caixa D'água
+	//----------------------------------------------------
+	//Chamando o Codificador da Caixa D'água
 	CodificaCxa Caixa(
 	.High(High), 
 	.m(m), 
@@ -60,7 +60,7 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	.segmentoG_NivelCaixa(segmentoG_NivelCaixa)
 	);
 	
-	// CHighamando o Codificador dos Acionamentos de Irrigação
+	//Chamando o Codificador dos Acionamentos de Irrigação
 	CodificaAciona Aciona(
 	.Gotejamento(Gotejamento), 
 	.Aspersao(Aspersao), 
@@ -73,7 +73,7 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	.segmentoG_TipoRega(segmentoG_TipoRega)
 	);
 
-	// Multiplexadores >>>
+	//Multiplexadores >>>
 	
 	Multiplexador Mux1(
 	.acio(segmentoA_TipoRega), 
@@ -139,29 +139,29 @@ module CodificaCxa(High, m, l, segmentoA_NivelCaixa, segmentoB_NivelCaixa, segme
 	 
     output segmentoA_NivelCaixa, segmentoB_NivelCaixa, segmentoC_NivelCaixa, segmentoD_NivelCaixa, segmentoE_NivelCaixa, segmentoF_NivelCaixa, segmentoG_NivelCaixa;
     
-	 // Letra A
+	 //Letra A
 	 and(segmentoA_NivelCaixa, notLow, High);
 	 
-	 // Letra B
+	 //Letra B
 	 or(segmentoB_NivelCaixa, l, notLow);
 	 
-	 // Letra C
+	 //Letra C
 	 or(segmentoC_NivelCaixa, l, notLow);
 	 
-	 // Letra D
+	 //Letra D
 	 and(segmentoD_NivelCaixa, l, notLow);
 	 
-	 // Letra E
+	 //Letra E
 	 and(auxe, notLow, High);
 	 and(auxe2, m, High);
 	 or(segmentoE_NivelCaixa, auxe, auxe2);
 	 
-	 // Letra F
+	 //Letra F
 	 and(auxf, notLow, High);
 	 and(auxf2, m, High);
 	 or(segmentoF_NivelCaixa, auxf, auxf2);
 	 
-	 // Letra G
+	 //Letra G
 	 and(segmentoG_NivelCaixa, notLow, notMedium, notHigh);
     
 endmodule
