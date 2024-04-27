@@ -24,17 +24,17 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	and(Gotejamento, notUmidadeSolo, UmidadeAr, or_notMedium_Temperatura, notAlarme);
     
 	//Sistema de Aspersao
-	and(As1, m, notTemperatura, notUmidadeSolo);
+	and(As1, Medium, notTemperatura, notUmidadeSolo);
 	and(As2, notUmidadeSolo, notUmidadeAr);
 	or(X1, As2, As1);
      not(notAlarme, Alarme);
      and(Aspersao, X1, notAlarme);
     
-	not(E1, m);
-	not(E2, l);
+	not(E1, Medium);
+	not(E2, Low);
     
 	and(E3, High, E1);
-	and(E4, m, E2);
+	and(E4, Medium, E2);
     
 	//Erro
 	or(Erro, E3, E4);
@@ -75,49 +75,49 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 
 	//Multiplexadores >>>
 	
-	Multiplexador Mux1(
+	Multiplexador Mediumux1(
 	.acio(segmentoA_TipoRega), 
 	.cxa(segmentoA_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
-	Multiplexador Mux2(
+	Multiplexador Mediumux2(
 	.acio(segmentoB_TipoRega), 
 	.cxa(segmentoB_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
-	Multiplexador Mux3(
+	Multiplexador Mediumux3(
 	.acio(segmentoC_TipoRega), 
 	.cxa(segmentoC_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
-	Multiplexador Mux4(
+	Multiplexador Mediumux4(
 	.acio(segmentoD_TipoRega), 
 	.cxa(segmentoD_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
-	Multiplexador Mux5(
+	Multiplexador Mediumux5(
 	.acio(segmentoE_TipoRega), 
 	.cxa(segmentoE_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
-	Multiplexador Mux6(
+	Multiplexador Mediumux6(
 	.acio(segmentoF_TipoRega), 
 	.cxa(segmentoF_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
-	Multiplexador Mux7(
+	Multiplexador Mediumux7(
 	.acio(segmentoG_TipoRega), 
 	.cxa(segmentoG_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
@@ -126,13 +126,13 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	
 endmodule
 
-module CodificaCxa(High, m, l, segmentoA_NivelCaixa, segmentoB_NivelCaixa, segmentoC_NivelCaixa, segmentoD_NivelCaixa, segmentoE_NivelCaixa, segmentoF_NivelCaixa, segmentoG_NivelCaixa);
+module CodificaCxa(High, Medium, Low, segmentoA_NivelCaixa, segmentoB_NivelCaixa, segmentoC_NivelCaixa, segmentoD_NivelCaixa, segmentoE_NivelCaixa, segmentoF_NivelCaixa, segmentoG_NivelCaixa);
     
 	 wire notLow, notMedium, notHigh;
 	 
-    input l, m, High;
-	 not(notLow, l);
-	 not(notMedium, m);
+    input Low, Medium, High;
+	 not(notLow, Low);
+	 not(notMedium, Medium);
 	 not(notHigh, High);
 	 wire auxe, auxe2;
 	 wire auxf, auxf2;
@@ -143,22 +143,22 @@ module CodificaCxa(High, m, l, segmentoA_NivelCaixa, segmentoB_NivelCaixa, segme
 	 and(segmentoA_NivelCaixa, notLow, High);
 	 
 	 //Letra B
-	 or(segmentoB_NivelCaixa, l, notLow);
+	 or(segmentoB_NivelCaixa, Low, notLow);
 	 
 	 //Letra C
-	 or(segmentoC_NivelCaixa, l, notLow);
+	 or(segmentoC_NivelCaixa, Low, notLow);
 	 
 	 //Letra D
-	 and(segmentoD_NivelCaixa, l, notLow);
+	 and(segmentoD_NivelCaixa, Low, notLow);
 	 
 	 //Letra E
 	 and(auxe, notLow, High);
-	 and(auxe2, m, High);
+	 and(auxe2, Medium, High);
 	 or(segmentoE_NivelCaixa, auxe, auxe2);
 	 
 	 //Letra F
 	 and(auxf, notLow, High);
-	 and(auxf2, m, High);
+	 and(auxf2, Medium, High);
 	 or(segmentoF_NivelCaixa, auxf, auxf2);
 	 
 	 //Letra G
@@ -166,7 +166,7 @@ module CodificaCxa(High, m, l, segmentoA_NivelCaixa, segmentoB_NivelCaixa, segme
     
 endmodule
 
-module Multiplexador(cxa, acio, ChaveSeletora, SaidaMux);
+module Mediumultiplexador(cxa, acio, ChaveSeletora, SaidaMux);
 	input cxa, acio;
 	input ChaveSeletora;
 	output SaidaMux;
