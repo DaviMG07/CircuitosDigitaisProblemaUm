@@ -49,8 +49,8 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 	//Chamando o Codificador da Caixa D'água
 	CodificaCxa Caixa(
 	.High(High), 
-	.m(m), 
-	.l(l), 
+	.Medium(Medium), 
+	.Low(Low), 
 	.segmentoA_NivelCaixa(segmentoA_NivelCaixa), 
 	.segmentoB_NivelCaixa(segmentoB_NivelCaixa), 
 	.segmentoC_NivelCaixa(segmentoC_NivelCaixa), 
@@ -75,49 +75,49 @@ module PBL(UmidadeAr, UmidadeSolo, Temperatura, Gotejamento, Aspersao, High, Med
 
 	//Multiplexadores >>>
 	
-	Multiplexador Mediumux1(
+	Multiplexador Mux1(
 	.acio(segmentoA_TipoRega), 
 	.cxa(segmentoA_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
-	Multiplexador Mediumux2(
+	Multiplexador Mux2(
 	.acio(segmentoB_TipoRega), 
 	.cxa(segmentoB_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
-	Multiplexador Mediumux3(
+	Multiplexador Mux3(
 	.acio(segmentoC_TipoRega), 
 	.cxa(segmentoC_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
-	Multiplexador Mediumux4(
+	Multiplexador Mux4(
 	.acio(segmentoD_TipoRega), 
 	.cxa(segmentoD_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
-	Multiplexador Mediumux5(
+	Multiplexador Mux5(
 	.acio(segmentoE_TipoRega), 
 	.cxa(segmentoE_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
-	Multiplexador Mediumux6(
+	Multiplexador Mux6(
 	.acio(segmentoF_TipoRega), 
 	.cxa(segmentoF_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
 	.SaidaMux(SaidaMux)
 	);
 	
-	Multiplexador Mediumux7(
+	Multiplexador Mux7(
 	.acio(segmentoG_TipoRega), 
 	.cxa(segmentoG_NivelCaixa), 
 	.ChaveSeletora(ChaveSeletora), 
