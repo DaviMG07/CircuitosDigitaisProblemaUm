@@ -1,0 +1,24 @@
+module returnAlarme(
+	highLevel,
+	mediumLevel,
+	lowLevel,
+	alarme
+);
+
+input highLevel, mediumLevel, lowLevel;
+output alarme;
+
+wire not_Medium, not_Low;
+wire and_High_notMedium, and_Medium_notLow;
+wire erro;
+
+not (not_Medium, Medium);
+not (not_Low, lowLevel);
+
+and and_HighNotMedium(and_High_notMedium, highLevel, not_Medium);
+and and_MediumNotLow(and_Medium_notLow, Mediu, not_Low);
+or or_erro(erro, and_High_notMedium, and_Medium_notLow);
+
+or or_alarme(alarme, erro, not_Low);
+ 
+endmodule
