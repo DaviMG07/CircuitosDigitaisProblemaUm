@@ -19,6 +19,8 @@ input umidadeAr, umidadeSolo, temperatura, high, mediun, low, chaveSeletora;
 output gotejamento, aspersao, erro, alarme, valvulaEntrada, saidaMux;
 
 wire not_umidadeAr, not_umidadeSolo, not_temperatura, not_high, not_medium, critico, not_chaveSeletora, not_erro;
+wire and_high_notMedium, and_medium_critico, and_medium_notTemperatura;
+wire or_temperatura_notMedium, or_andMediumANDnotTemperatura_notUmidadeAr;
 
 not(critico, low);
 not(not_temperatura, temperatura);
