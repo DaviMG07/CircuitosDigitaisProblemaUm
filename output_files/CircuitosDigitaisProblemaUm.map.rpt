@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CircuitosDigitaisProblemaUm
-Sun Apr 28 18:56:01 2024
+Sun Apr 28 20:23:49 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -11,10 +11,8 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
   5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Messages
+  7. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -41,15 +39,11 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-----------------------------+------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun Apr 28 18:56:01 2024          ;
+; Analysis & Synthesis Status ; Failed - Sun Apr 28 20:23:49 2024              ;
 ; Quartus Prime Version       ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name               ; CircuitosDigitaisProblemaUm                    ;
 ; Top-level Entity Name       ; CircuitosDigitaisProblemaUm                    ;
 ; Family                      ; MAX II                                         ;
-; Total logic elements        ; 5                                              ;
-; Total pins                  ; 12                                             ;
-; Total virtual pins          ; 0                                              ;
-; UFM blocks                  ; 0 / 1 ( 0 % )                                  ;
 +-----------------------------+------------------------------------------------+
 
 
@@ -146,66 +140,11 @@ https://fpgasoftware.intel.com/eula.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                         ; Library ;
 +----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
 ; CircuitosDigitaisProblemaUm.v    ; yes             ; User Verilog HDL File  ; /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v ;         ;
+; returnMux.v                      ; yes             ; User Verilog HDL File  ; /home/davi/CircuitosDigitaisProblemaUm/returnMux.v                   ;         ;
+; driverMatriz.v                   ; yes             ; User Verilog HDL File  ; /home/davi/CircuitosDigitaisProblemaUm/driverMatriz.v                ;         ;
+; encoderNivelCaixa.v              ; yes             ; User Verilog HDL File  ; /home/davi/CircuitosDigitaisProblemaUm/encoderNivelCaixa.v           ;         ;
+; encoderTipoRega.v                ; yes             ; User Verilog HDL File  ; /home/davi/CircuitosDigitaisProblemaUm/encoderTipoRega.v             ;         ;
 +----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Total logic elements                        ; 5           ;
-;     -- Combinational with no register       ; 5           ;
-;     -- Register only                        ; 0           ;
-;     -- Combinational with a register        ; 0           ;
-;                                             ;             ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 0           ;
-;     -- 3 input functions                    ; 5           ;
-;     -- 2 input functions                    ; 0           ;
-;     -- 1 input functions                    ; 0           ;
-;     -- 0 input functions                    ; 0           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 5           ;
-;     -- arithmetic mode                      ; 0           ;
-;     -- qfbk mode                            ; 0           ;
-;     -- register cascade mode                ; 0           ;
-;     -- synchronous clear/load mode          ; 0           ;
-;     -- asynchronous clear/load mode         ; 0           ;
-;                                             ;             ;
-; Total registers                             ; 0           ;
-; I/O pins                                    ; 12          ;
-; Maximum fan-out node                        ; mediumLevel ;
-; Maximum fan-out                             ; 3           ;
-; Total fan-out                               ; 19          ;
-; Average fan-out                             ; 1.12        ;
-+---------------------------------------------+-------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                           ;
-+------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+-----------------------------+--------------+
-; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name          ; Entity Name                 ; Library Name ;
-+------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+-----------------------------+--------------+
-; |CircuitosDigitaisProblemaUm ; 5 (5)       ; 0            ; 0          ; 12   ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CircuitosDigitaisProblemaUm ; CircuitosDigitaisProblemaUm ; work         ;
-+------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+-----------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
 
 
 +-------------------------------+
@@ -214,29 +153,51 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun Apr 28 18:55:17 2024
+    Info: Processing started: Sun Apr 28 20:23:03 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CircuitosDigitaisProblemaUm -c CircuitosDigitaisProblemaUm
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file CircuitosDigitaisProblemaUm.v
     Info (12023): Found entity 1: CircuitosDigitaisProblemaUm File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file returnMux.v
+    Info (12023): Found entity 1: returnMux File: /home/davi/CircuitosDigitaisProblemaUm/returnMux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file driverMatriz.v
+    Info (12023): Found entity 1: driverMatriz File: /home/davi/CircuitosDigitaisProblemaUm/driverMatriz.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file encoderNivelCaixa.v
+    Info (12023): Found entity 1: encoderNivelCaixa File: /home/davi/CircuitosDigitaisProblemaUm/encoderNivelCaixa.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file encoderTipoRega.v
+    Info (12023): Found entity 1: encoderTipoRega File: /home/davi/CircuitosDigitaisProblemaUm/encoderTipoRega.v Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at CircuitosDigitaisProblemaUm.v(36): created implicit net for "or_Temperatura_NotMedium" File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 36
 Warning (10236): Verilog HDL Implicit Net warning at CircuitosDigitaisProblemaUm.v(40): created implicit net for "and_NotTemperatura_Medium" File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 40
 Warning (10236): Verilog HDL Implicit Net warning at CircuitosDigitaisProblemaUm.v(41): created implicit net for "or_AndNotTemperaturaMedium_NotUmidadeAr" File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 41
+Warning (10236): Verilog HDL Implicit Net warning at encoderNivelCaixa.v(25): created implicit net for "auxiliarE" File: /home/davi/CircuitosDigitaisProblemaUm/encoderNivelCaixa.v Line: 25
+Critical Warning (10846): Verilog HDL Instantiation warning at CircuitosDigitaisProblemaUm.v(55): instance has no name File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 55
+Critical Warning (10846): Verilog HDL Instantiation warning at CircuitosDigitaisProblemaUm.v(67): instance has no name File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 67
+Critical Warning (10846): Verilog HDL Instantiation warning at CircuitosDigitaisProblemaUm.v(88): instance has no name File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 88
 Info (12127): Elaborating entity "CircuitosDigitaisProblemaUm" for the top level hierarchy
-Warning (10034): Output port "saidaMux" at CircuitosDigitaisProblemaUm.v(17) has no driver File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 17
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "saidaMux" is stuck at GND File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 17
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "chaveSeletora" File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 16
-Info (21057): Implemented 17 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 5 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 325 megabytes
-    Info: Processing ended: Sun Apr 28 18:56:01 2024
-    Info: Elapsed time: 00:00:44
-    Info: Total CPU time (on all processors): 00:00:49
+Info (12128): Elaborating entity "encoderNivelCaixa" for hierarchy "encoderNivelCaixa:comb_23" File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 55
+Info (12128): Elaborating entity "encoderTipoRega" for hierarchy "encoderTipoRega:comb_24" File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 67
+Info (12128): Elaborating entity "driverMatriz" for hierarchy "driverMatriz:comb_25" File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 88
+Info (12128): Elaborating entity "returnMux" for hierarchy "driverMatriz:comb_25|returnMux:segA" File: /home/davi/CircuitosDigitaisProblemaUm/driverMatriz.v Line: 28
+Error (12014): Net "driverMatriz:comb_25|saidaMux", which fans out to "driverMatriz:comb_25|saidaMux", cannot be assigned more than one value File: /home/davi/CircuitosDigitaisProblemaUm/driverMatriz.v Line: 21
+    Error (12015): Net is fed by "driverMatriz:comb_25|returnMux:segA|saidaMux" File: /home/davi/CircuitosDigitaisProblemaUm/returnMux.v Line: 9
+    Error (12015): Net is fed by "driverMatriz:comb_25|returnMux:segB|saidaMux" File: /home/davi/CircuitosDigitaisProblemaUm/returnMux.v Line: 9
+    Error (12015): Net is fed by "driverMatriz:comb_25|returnMux:segC|saidaMux" File: /home/davi/CircuitosDigitaisProblemaUm/returnMux.v Line: 9
+    Error (12015): Net is fed by "driverMatriz:comb_25|returnMux:segD|saidaMux" File: /home/davi/CircuitosDigitaisProblemaUm/returnMux.v Line: 9
+    Error (12015): Net is fed by "driverMatriz:comb_25|returnMux:segE|saidaMux" File: /home/davi/CircuitosDigitaisProblemaUm/returnMux.v Line: 9
+    Error (12015): Net is fed by "driverMatriz:comb_25|returnMux:segF|saidaMux" File: /home/davi/CircuitosDigitaisProblemaUm/returnMux.v Line: 9
+    Error (12015): Net is fed by "driverMatriz:comb_25|returnMux:segG|saidaMux" File: /home/davi/CircuitosDigitaisProblemaUm/returnMux.v Line: 9
+Info (144001): Generated suppressed messages file /home/davi/CircuitosDigitaisProblemaUm/output_files/CircuitosDigitaisProblemaUm.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 8 errors, 8 warnings
+    Error: Peak virtual memory: 319 megabytes
+    Error: Processing ended: Sun Apr 28 20:23:49 2024
+    Error: Elapsed time: 00:00:46
+    Error: Total CPU time (on all processors): 00:00:47
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/davi/CircuitosDigitaisProblemaUm/output_files/CircuitosDigitaisProblemaUm.map.smsg.
 
 
