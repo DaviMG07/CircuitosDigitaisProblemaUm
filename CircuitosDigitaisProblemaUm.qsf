@@ -19,14 +19,14 @@
 #
 # Quartus Prime
 # Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-# Date created = 09:49:21  April 28, 2024
+# Date created = 20:34:44  April 28, 2024
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		RegaAutomatica_assignment_defaults.qdf
+#		CircuitosDigitaisProblemaUm_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -39,10 +39,17 @@
 
 set_global_assignment -name FAMILY "MAX II"
 set_global_assignment -name DEVICE EPM240T100C5
-set_global_assignment -name TOP_LEVEL_ENTITY RegaAutomatica
+set_global_assignment -name TOP_LEVEL_ENTITY CircuitosDigitaisProblemaUm
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:49:21  APRIL 28, 2024"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:34:44  APRIL 28, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
+set_global_assignment -name VERILOG_FILE returnMux.v
+set_global_assignment -name VERILOG_FILE returnGotejamento.v
+set_global_assignment -name VERILOG_FILE returnAspersao.v
+set_global_assignment -name VERILOG_FILE returnAlarme.v
+set_global_assignment -name VERILOG_FILE driverTipoRega.v
+set_global_assignment -name VERILOG_FILE driverNivelCaixa.v
+set_global_assignment -name VERILOG_FILE driverMatriz.v
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -55,11 +62,4 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name VERILOG_FILE RegaAutomatica.v
-set_global_assignment -name VERILOG_FILE returnAlarme.v
-set_global_assignment -name VERILOG_FILE returnGotejamento.v
-set_global_assignment -name VERILOG_FILE returnAspersao.v
-set_global_assignment -name VERILOG_FILE returnMux.v
-set_global_assignment -name VERILOG_FILE driverTipoRega.v
-set_global_assignment -name VERILOG_FILE driverNivelCaixa.v
-set_global_assignment -name VERILOG_FILE driverMatriz.v
+set_global_assignment -name VERILOG_FILE CircuitosDigitaisProblemaUm.v

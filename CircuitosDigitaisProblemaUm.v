@@ -1,4 +1,4 @@
-module RegaAutomatica(
+module CircuitosDigitaisProblemaUm(
 	highLevel,
 	mediumLevel,
 	lowLevel,
