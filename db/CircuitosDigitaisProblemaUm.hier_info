@@ -1,0 +1,23 @@
+|CircuitosDigitaisProblemaUm
+highLevel => And_High_NotMedium.IN0
+highLevel => comb.IN1
+mediumLevel => And_Medium_NotLow.IN0
+mediumLevel => and_NotTemperatura_Medium.IN0
+mediumLevel => And_High_NotMedium.IN1
+mediumLevel => or_Temperatura_NotMedium.IN0
+lowLevel => And_Medium_NotLow.IN1
+lowLevel => Or_alarme.IN1
+temperatura => or_Temperatura_NotMedium.IN1
+temperatura => and_NotTemperatura_Medium.IN1
+umidadeSolo => Gotejamento.IN2
+umidadeSolo => Aspersao.IN2
+umidadeAr => Gotejamento.IN3
+umidadeAr => or_AndNotTemperaturaMedium_NotUmidadeAr.IN1
+alarme <= Or_alarme.DB_MAX_OUTPUT_PORT_TYPE
+chaveSeletora => ~NO_FANOUT~
+saidaMux <= <GND>
+valvulaEntrada <= comb.DB_MAX_OUTPUT_PORT_TYPE
+gotejamento <= Gotejamento.DB_MAX_OUTPUT_PORT_TYPE
+aspersao <= Aspersao.DB_MAX_OUTPUT_PORT_TYPE
+
+

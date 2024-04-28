@@ -1,5 +1,5 @@
 module CircuitosDigitaisProblemaUm(
-  highLevel,
+ highLevel,
   mediumLevel,
   lowLevel,
   temperatura,
@@ -21,13 +21,24 @@ wire S0AR0, S0BR0, S0CR0, S0DR0, S0ER0, S0FR0, S0GR0;
 wire erro;
 wire and_High_NotMedium, and_Medium_NotLow;
 
+//erro 
 and And_High_NotMedium(and_High_NotMedium, highLevel, !mediumLevel);
 and And_Medium_NotLow(and_Medium_NotLow, mediumLevel, !lowLevel);
-
 or Or_erro(erro, and_High_NotMedium, and_Medium_NotLow);
 
+//alarme 
 or Or_alarme(alarme, erro, !lowLevel);
 
+//valvula de Entrada
 nor (valvulaEntrada, highLevel, erro);
+
+//gotejamento
+or (or_Temperatura_NotMedium, temperatura, !mediumLevel);
+and Gotejamento(gotejamento, !umidadeSolo, !alarme, umidadeAr, or_Temperatura_NotMedium);
+
+//aspersao 
+and (and_NotTemperatura_Medium, !temperatura, mediumLevel);
+or (or_AndNotTemperaturaMedium_NotUmidadeAr, and_NotTemperatura_Medium, !umidadeAr);
+and Aspersao(aspersao, !umidadeSolo, !alarme, or_AndNotTemperaturaMedium_NotUmidadeAr);
 
 endmodule

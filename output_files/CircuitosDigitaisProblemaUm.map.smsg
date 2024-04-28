@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at CircuitosDigitaisProblemaUm.v(22): object "and_High_NotMedium" differs only in case from object "And_High_NotMedium" in the same scope File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 22
+Info (10281): Verilog HDL Declaration information at CircuitosDigitaisProblemaUm.v(22): object "and_Medium_NotLow" differs only in case from object "And_Medium_NotLow" in the same scope File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 22
