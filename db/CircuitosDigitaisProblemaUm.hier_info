@@ -1,0 +1,155 @@
+|CircuitosDigitaisProblemaUm
+highLevel => highLevel.IN2
+mediumLevel => mediumLevel.IN3
+lowLevel => lowLevel.IN2
+temperaturaInvertida => temperaturaInvertida.IN1
+umidadeSolo => _.IN1
+umidadeSolo => _.IN1
+umidadeAr => umidadeAr.IN1
+gotejamento <= gotejamento.DB_MAX_OUTPUT_PORT_TYPE
+aspersao <= aspersao.DB_MAX_OUTPUT_PORT_TYPE
+erro <= returnAlarme:comb_4.erro
+alarme <= returnAlarme:comb_4.alarme
+valvulaEntrada <= nor_valvulaEntrada.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CircuitosDigitaisProblemaUm|returnAlarme:comb_4
+highLevel => and_HighNotMedium.IN0
+mediumLevel => and_MediumNotLow.IN0
+mediumLevel => and_HighNotMedium.IN1
+lowLevel => and_MediumNotLow.IN1
+lowLevel => or_alarme.IN1
+erro <= or_erro.DB_MAX_OUTPUT_PORT_TYPE
+alarme <= or_alarme.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CircuitosDigitaisProblemaUm|returnGotejamento:comb_6
+not_Medium => or_Temperatura_NotMedium.IN0
+not_UmidadeSolo => WideAnd0.IN1
+umidadeAr => WideAnd0.IN2
+temperatura => or_Temperatura_NotMedium.IN1
+not_Alarme => WideAnd0.IN3
+gotejamento <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CircuitosDigitaisProblemaUm|returnAspersao:comb_10
+mediumLevel => and_NotTemperatura_Medium.IN0
+not_Temperatura => and_NotTemperatura_Medium.IN1
+not_UmidadeAr => or_AndNotTemperaturaMedium_NotUmidadeAr.IN1
+not_UmidadeSolo => WideAnd0.IN1
+not_Alarme => WideAnd0.IN2
+aspersao <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CircuitosDigitaisProblemaUm|driverNivelCaixa:comb_14
+highLevel => comb.IN0
+highLevel => auxiliarE.IN0
+highLevel => comb.IN0
+mediumLevel => comb.IN1
+mediumLevel => auxiliarE.IN1
+mediumLevel => comb.IN1
+lowLevel => comb.IN1
+segA <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segB <= <VCC>
+segC <= <VCC>
+segD <= <GND>
+segE <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segF <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segG <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CircuitosDigitaisProblemaUm|driverTipoRega:comb_15
+aspersao => comb.IN0
+aspersao => segB.DATAIN
+aspersao => comb.IN0
+aspersao => comb.IN0
+aspersao => segC.DATAIN
+gotejamento => comb.IN1
+gotejamento => comb.IN1
+gotejamento => comb.IN1
+gotejamento => segD.DATAIN
+gotejamento => segG.DATAIN
+segA <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segB <= aspersao.DB_MAX_OUTPUT_PORT_TYPE
+segC <= aspersao.DB_MAX_OUTPUT_PORT_TYPE
+segD <= gotejamento.DB_MAX_OUTPUT_PORT_TYPE
+segE <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segF <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segG <= gotejamento.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CircuitosDigitaisProblemaUm|driverMatriz:comb_16
+chaveSeletora => chaveSeletora.IN7
+saidaMux <= saidaMux.DB_MAX_OUTPUT_PORT_TYPE
+segA_NivelCaixa => segA_NivelCaixa.IN1
+segA_TipoRega => segA_TipoRega.IN1
+segB_NivelCaixa => segB_NivelCaixa.IN1
+segB_TipoRega => segB_TipoRega.IN1
+segC_NivelCaixa => segC_NivelCaixa.IN1
+segC_TipoRega => segC_TipoRega.IN1
+segD_NivelCaixa => segD_NivelCaixa.IN1
+segD_TipoRega => segD_TipoRega.IN1
+segE_NivelCaixa => segE_NivelCaixa.IN1
+segE_TipoRega => segE_TipoRega.IN1
+segF_NivelCaixa => segF_NivelCaixa.IN1
+segF_TipoRega => segF_TipoRega.IN1
+segG_NivelCaixa => segG_NivelCaixa.IN1
+segG_TipoRega => segG_TipoRega.IN1
+
+
+|CircuitosDigitaisProblemaUm|driverMatriz:comb_16|returnMux:segA
+ifTrue => and_ChaveSeletora_IfTrue.IN0
+ifFalse => and_NotChaveSeletora_IfFalse.IN0
+chaveSeletora => and_ChaveSeletora_IfTrue.IN1
+chaveSeletora => and_NotChaveSeletora_IfFalse.IN1
+saidaMux <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CircuitosDigitaisProblemaUm|driverMatriz:comb_16|returnMux:segB
+ifTrue => and_ChaveSeletora_IfTrue.IN0
+ifFalse => and_NotChaveSeletora_IfFalse.IN0
+chaveSeletora => and_ChaveSeletora_IfTrue.IN1
+chaveSeletora => and_NotChaveSeletora_IfFalse.IN1
+saidaMux <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CircuitosDigitaisProblemaUm|driverMatriz:comb_16|returnMux:segC
+ifTrue => and_ChaveSeletora_IfTrue.IN0
+ifFalse => and_NotChaveSeletora_IfFalse.IN0
+chaveSeletora => and_ChaveSeletora_IfTrue.IN1
+chaveSeletora => and_NotChaveSeletora_IfFalse.IN1
+saidaMux <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CircuitosDigitaisProblemaUm|driverMatriz:comb_16|returnMux:segD
+ifTrue => and_ChaveSeletora_IfTrue.IN0
+ifFalse => and_NotChaveSeletora_IfFalse.IN0
+chaveSeletora => and_ChaveSeletora_IfTrue.IN1
+chaveSeletora => and_NotChaveSeletora_IfFalse.IN1
+saidaMux <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CircuitosDigitaisProblemaUm|driverMatriz:comb_16|returnMux:segE
+ifTrue => and_ChaveSeletora_IfTrue.IN0
+ifFalse => and_NotChaveSeletora_IfFalse.IN0
+chaveSeletora => and_ChaveSeletora_IfTrue.IN1
+chaveSeletora => and_NotChaveSeletora_IfFalse.IN1
+saidaMux <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CircuitosDigitaisProblemaUm|driverMatriz:comb_16|returnMux:segF
+ifTrue => and_ChaveSeletora_IfTrue.IN0
+ifFalse => and_NotChaveSeletora_IfFalse.IN0
+chaveSeletora => and_ChaveSeletora_IfTrue.IN1
+chaveSeletora => and_NotChaveSeletora_IfFalse.IN1
+saidaMux <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CircuitosDigitaisProblemaUm|driverMatriz:comb_16|returnMux:segG
+ifTrue => and_ChaveSeletora_IfTrue.IN0
+ifFalse => and_NotChaveSeletora_IfFalse.IN0
+chaveSeletora => and_ChaveSeletora_IfTrue.IN1
+chaveSeletora => and_NotChaveSeletora_IfFalse.IN1
+saidaMux <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
