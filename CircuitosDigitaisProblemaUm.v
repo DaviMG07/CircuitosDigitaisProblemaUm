@@ -67,7 +67,6 @@ encoderTipoRega(
 );
 
 //matriz de sete segmentos
-
 driverMatriz(
   .chaveSeletora(chaveSeletora),
   .saidaMux(saidaMux),

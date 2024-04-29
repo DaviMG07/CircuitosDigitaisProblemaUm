@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CircuitosDigitaisProblemaUm
-Sun Apr 28 20:23:49 2024
+Sun Apr 28 20:58:06 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -39,7 +39,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-----------------------------+------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sun Apr 28 20:23:49 2024              ;
+; Analysis & Synthesis Status ; Failed - Sun Apr 28 20:58:06 2024              ;
 ; Quartus Prime Version       ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name               ; CircuitosDigitaisProblemaUm                    ;
 ; Top-level Entity Name       ; CircuitosDigitaisProblemaUm                    ;
@@ -153,7 +153,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun Apr 28 20:23:03 2024
+    Info: Processing started: Sun Apr 28 20:57:19 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CircuitosDigitaisProblemaUm -c CircuitosDigitaisProblemaUm
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -173,11 +173,11 @@ Warning (10236): Verilog HDL Implicit Net warning at CircuitosDigitaisProblemaUm
 Warning (10236): Verilog HDL Implicit Net warning at encoderNivelCaixa.v(25): created implicit net for "auxiliarE" File: /home/davi/CircuitosDigitaisProblemaUm/encoderNivelCaixa.v Line: 25
 Critical Warning (10846): Verilog HDL Instantiation warning at CircuitosDigitaisProblemaUm.v(55): instance has no name File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 55
 Critical Warning (10846): Verilog HDL Instantiation warning at CircuitosDigitaisProblemaUm.v(67): instance has no name File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 67
-Critical Warning (10846): Verilog HDL Instantiation warning at CircuitosDigitaisProblemaUm.v(88): instance has no name File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 88
+Critical Warning (10846): Verilog HDL Instantiation warning at CircuitosDigitaisProblemaUm.v(87): instance has no name File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 87
 Info (12127): Elaborating entity "CircuitosDigitaisProblemaUm" for the top level hierarchy
 Info (12128): Elaborating entity "encoderNivelCaixa" for hierarchy "encoderNivelCaixa:comb_23" File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 55
 Info (12128): Elaborating entity "encoderTipoRega" for hierarchy "encoderTipoRega:comb_24" File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 67
-Info (12128): Elaborating entity "driverMatriz" for hierarchy "driverMatriz:comb_25" File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 88
+Info (12128): Elaborating entity "driverMatriz" for hierarchy "driverMatriz:comb_25" File: /home/davi/CircuitosDigitaisProblemaUm/CircuitosDigitaisProblemaUm.v Line: 87
 Info (12128): Elaborating entity "returnMux" for hierarchy "driverMatriz:comb_25|returnMux:segA" File: /home/davi/CircuitosDigitaisProblemaUm/driverMatriz.v Line: 28
 Error (12014): Net "driverMatriz:comb_25|saidaMux", which fans out to "driverMatriz:comb_25|saidaMux", cannot be assigned more than one value File: /home/davi/CircuitosDigitaisProblemaUm/driverMatriz.v Line: 21
     Error (12015): Net is fed by "driverMatriz:comb_25|returnMux:segA|saidaMux" File: /home/davi/CircuitosDigitaisProblemaUm/returnMux.v Line: 9
@@ -189,10 +189,10 @@ Error (12014): Net "driverMatriz:comb_25|saidaMux", which fans out to "driverMat
     Error (12015): Net is fed by "driverMatriz:comb_25|returnMux:segG|saidaMux" File: /home/davi/CircuitosDigitaisProblemaUm/returnMux.v Line: 9
 Info (144001): Generated suppressed messages file /home/davi/CircuitosDigitaisProblemaUm/output_files/CircuitosDigitaisProblemaUm.map.smsg
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 8 errors, 8 warnings
-    Error: Peak virtual memory: 319 megabytes
-    Error: Processing ended: Sun Apr 28 20:23:49 2024
-    Error: Elapsed time: 00:00:46
-    Error: Total CPU time (on all processors): 00:00:47
+    Error: Peak virtual memory: 316 megabytes
+    Error: Processing ended: Sun Apr 28 20:58:06 2024
+    Error: Elapsed time: 00:00:47
+    Error: Total CPU time (on all processors): 00:00:50
 
 
 +------------------------------------------+
