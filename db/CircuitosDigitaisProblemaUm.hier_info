@@ -9,11 +9,17 @@ umidadeSolo => Aspersao.IN2
 umidadeAr => Gotejamento.IN3
 umidadeAr => or_AndNotTemperaturaMedium_NotUmidadeAr.IN1
 alarme <= Or_alarme.DB_MAX_OUTPUT_PORT_TYPE
-chaveSeletora => chaveSeletora.IN1
-saidaMux <= driverMatriz:comb_25.saidaMux
 valvulaEntrada <= comb.DB_MAX_OUTPUT_PORT_TYPE
 gotejamento <= gotejamento.DB_MAX_OUTPUT_PORT_TYPE
 aspersao <= aspersao.DB_MAX_OUTPUT_PORT_TYPE
+chaveSeletora => chaveSeletora.IN1
+segA <= driverMatriz:comb_25.segmA
+segB <= driverMatriz:comb_25.segmB
+segC <= driverMatriz:comb_25.segmC
+segD <= driverMatriz:comb_25.segmD
+segE <= driverMatriz:comb_25.segmE
+segF <= driverMatriz:comb_25.segmF
+segG <= driverMatriz:comb_25.segmG
 
 
 |CircuitosDigitaisProblemaUm|encoderNivelCaixa:comb_23
@@ -55,7 +61,6 @@ segG <= gotejamento.DB_MAX_OUTPUT_PORT_TYPE
 
 |CircuitosDigitaisProblemaUm|driverMatriz:comb_25
 chaveSeletora => chaveSeletora.IN7
-saidaMux <= saidaMux.DB_MAX_OUTPUT_PORT_TYPE
 segA_NivelCaixa => segA_NivelCaixa.IN1
 segA_TipoRega => segA_TipoRega.IN1
 segB_NivelCaixa => segB_NivelCaixa.IN1
@@ -70,6 +75,13 @@ segF_NivelCaixa => segF_NivelCaixa.IN1
 segF_TipoRega => segF_TipoRega.IN1
 segG_NivelCaixa => segG_NivelCaixa.IN1
 segG_TipoRega => segG_TipoRega.IN1
+segmA <= returnMux:segA.saidaMux
+segmB <= returnMux:segB.saidaMux
+segmC <= returnMux:segC.saidaMux
+segmD <= returnMux:segD.saidaMux
+segmE <= returnMux:segE.saidaMux
+segmF <= returnMux:segF.saidaMux
+segmG <= returnMux:segG.saidaMux
 
 
 |CircuitosDigitaisProblemaUm|driverMatriz:comb_25|returnMux:segA

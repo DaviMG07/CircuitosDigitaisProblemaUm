@@ -1,5 +1,9 @@
-Analysis & Synthesis Status : Failed - Sun Apr 28 20:58:06 2024
+Analysis & Synthesis Status : Successful - Sun Apr 28 22:25:36 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : CircuitosDigitaisProblemaUm
 Top-level Entity Name : CircuitosDigitaisProblemaUm
 Family : MAX II
+Total logic elements : 10
+Total pins : 18
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

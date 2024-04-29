@@ -80,10 +80,10 @@ GND*                         : 14        :        :                   :         
 GND*                         : 15        :        :                   :         : 1         :                
 GND*                         : 16        :        :                   :         : 1         :                
 GND*                         : 17        :        :                   :         : 1         :                
-umidadeSolo                  : 18        : input  : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : 18        :        :                   :         : 1         :                
 GND*                         : 19        :        :                   :         : 1         :                
-alarme                       : 20        : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : 21        :        :                   :         : 1         :                
+gotejamento                  : 20        : output : 3.3-V LVTTL       :         : 1         : N              
+umidadeAr                    : 21        : input  : 3.3-V LVTTL       :         : 1         : N              
 TMS                          : 22        : input  :                   :         : 1         :                
 TDI                          : 23        : input  :                   :         : 1         :                
 TCK                          : 24        : input  :                   :         : 1         :                
@@ -91,45 +91,45 @@ TDO                          : 25        : output :                   :         
 GND*                         : 26        :        :                   :         : 1         :                
 GND*                         : 27        :        :                   :         : 1         :                
 GND*                         : 28        :        :                   :         : 1         :                
-mediumLevel                  : 29        : input  : 3.3-V LVTTL       :         : 1         : N              
-temperatura                  : 30        : input  : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : 29        :        :                   :         : 1         :                
+GND*                         : 30        :        :                   :         : 1         :                
 VCCIO1                       : 31        : power  :                   : 3.3V    : 1         :                
 GNDIO                        : 32        : gnd    :                   :         :           :                
 GND*                         : 33        :        :                   :         : 1         :                
-lowLevel                     : 34        : input  : 3.3-V LVTTL       :         : 1         : N              
-umidadeAr                    : 35        : input  : 3.3-V LVTTL       :         : 1         : N              
-valvulaEntrada               : 36        : output : 3.3-V LVTTL       :         : 1         : N              
-highLevel                    : 37        : input  : 3.3-V LVTTL       :         : 1         : N              
-gotejamento                  : 38        : output : 3.3-V LVTTL       :         : 1         : N              
-aspersao                     : 39        : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : 40        :        :                   :         : 1         :                
-GND*                         : 41        :        :                   :         : 1         :                
-GND*                         : 42        :        :                   :         : 1         :                
-GND*                         : 43        :        :                   :         : 1         :                
-saidaMux                     : 44        : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : 34        :        :                   :         : 1         :                
+GND*                         : 35        :        :                   :         : 1         :                
+mediumLevel                  : 36        : input  : 3.3-V LVTTL       :         : 1         : N              
+lowLevel                     : 37        : input  : 3.3-V LVTTL       :         : 1         : N              
+aspersao                     : 38        : output : 3.3-V LVTTL       :         : 1         : N              
+segC                         : 39        : output : 3.3-V LVTTL       :         : 1         : N              
+segB                         : 40        : output : 3.3-V LVTTL       :         : 1         : N              
+umidadeSolo                  : 41        : input  : 3.3-V LVTTL       :         : 1         : N              
+segD                         : 42        : output : 3.3-V LVTTL       :         : 1         : N              
+alarme                       : 43        : output : 3.3-V LVTTL       :         : 1         : N              
+segA                         : 44        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : 45        : power  :                   : 3.3V    : 1         :                
 GNDIO                        : 46        : gnd    :                   :         :           :                
-GND*                         : 47        :        :                   :         : 1         :                
-GND*                         : 48        :        :                   :         : 1         :                
+segE                         : 47        : output : 3.3-V LVTTL       :         : 1         : N              
+segF                         : 48        : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : 49        :        :                   :         : 1         :                
 GND*                         : 50        :        :                   :         : 1         :                
-GND*                         : 51        :        :                   :         : 1         :                
+segG                         : 51        : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : 52        :        :                   :         : 2         :                
 GND*                         : 53        :        :                   :         : 2         :                
 GND*                         : 54        :        :                   :         : 2         :                
 GND*                         : 55        :        :                   :         : 2         :                
 GND*                         : 56        :        :                   :         : 2         :                
 GND*                         : 57        :        :                   :         : 2         :                
-GND*                         : 58        :        :                   :         : 2         :                
+temperatura                  : 58        : input  : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : 59        : power  :                   : 3.3V    : 2         :                
 GNDIO                        : 60        : gnd    :                   :         :           :                
 GND*                         : 61        :        :                   :         : 2         :                
-chaveSeletora                : 62        : input  : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 62        :        :                   :         : 2         :                
 VCCINT                       : 63        : power  :                   : 2.5V/3.3V :           :                
 GND*                         : 64        :        :                   :         : 2         :                
 GNDINT                       : 65        : gnd    :                   :         :           :                
 GND*                         : 66        :        :                   :         : 2         :                
-GND*                         : 67        :        :                   :         : 2         :                
+highLevel                    : 67        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : 68        :        :                   :         : 2         :                
 GND*                         : 69        :        :                   :         : 2         :                
 GND*                         : 70        :        :                   :         : 2         :                
@@ -148,8 +148,8 @@ GND*                         : 82        :        :                   :         
 GND*                         : 83        :        :                   :         : 2         :                
 GND*                         : 84        :        :                   :         : 2         :                
 GND*                         : 85        :        :                   :         : 2         :                
-GND*                         : 86        :        :                   :         : 2         :                
-GND*                         : 87        :        :                   :         : 2         :                
+valvulaEntrada               : 86        : output : 3.3-V LVTTL       :         : 2         : N              
+chaveSeletora                : 87        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : 88        :        :                   :         : 2         :                
 GND*                         : 89        :        :                   :         : 2         :                
 GND*                         : 90        :        :                   :         : 2         :                

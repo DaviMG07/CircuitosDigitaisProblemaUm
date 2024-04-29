@@ -1,5 +1,5 @@
 Timing Analyzer report for CircuitosDigitaisProblemaUm
-Sun Apr 28 18:56:18 2024
+Sun Apr 28 22:26:08 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -145,25 +145,26 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 6     ; 6    ;
-; Unconstrained Input Port Paths  ; 18    ; 18   ;
-; Unconstrained Output Ports      ; 4     ; 4    ;
-; Unconstrained Output Port Paths ; 18    ; 18   ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 61    ; 61   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 61    ; 61   ;
 +---------------------------------+-------+------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Unconstrained Input Ports                                                                          ;
-+-------------+--------------------------------------------------------------------------------------+
-; Input Port  ; Comment                                                                              ;
-+-------------+--------------------------------------------------------------------------------------+
-; highLevel   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; lowLevel    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; mediumLevel ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; temperatura ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; umidadeAr   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; umidadeSolo ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+-------------+--------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                            ;
++---------------+--------------------------------------------------------------------------------------+
+; Input Port    ; Comment                                                                              ;
++---------------+--------------------------------------------------------------------------------------+
+; chaveSeletora ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; highLevel     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lowLevel      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; mediumLevel   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; temperatura   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; umidadeAr     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; umidadeSolo   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+--------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------+
@@ -174,22 +175,30 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; alarme         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; aspersao       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; gotejamento    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segA           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segB           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segC           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segD           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segE           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segF           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segG           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; valvulaEntrada ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +----------------+---------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Unconstrained Input Ports                                                                          ;
-+-------------+--------------------------------------------------------------------------------------+
-; Input Port  ; Comment                                                                              ;
-+-------------+--------------------------------------------------------------------------------------+
-; highLevel   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; lowLevel    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; mediumLevel ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; temperatura ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; umidadeAr   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; umidadeSolo ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+-------------+--------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                            ;
++---------------+--------------------------------------------------------------------------------------+
+; Input Port    ; Comment                                                                              ;
++---------------+--------------------------------------------------------------------------------------+
+; chaveSeletora ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; highLevel     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lowLevel      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; mediumLevel   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; temperatura   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; umidadeAr     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; umidadeSolo   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+--------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------+
@@ -200,6 +209,13 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; alarme         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; aspersao       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; gotejamento    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segA           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segB           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segC           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segD           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segE           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segF           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; segG           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; valvulaEntrada ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +----------------+---------------------------------------------------------------------------------------+
 
@@ -210,7 +226,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun Apr 28 18:56:16 2024
+    Info: Processing started: Sun Apr 28 22:26:06 2024
 Info: Command: quartus_sta CircuitosDigitaisProblemaUm -c CircuitosDigitaisProblemaUm
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -237,7 +253,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 315 megabytes
-    Info: Processing ended: Sun Apr 28 18:56:18 2024
+    Info: Processing ended: Sun Apr 28 22:26:08 2024
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 

@@ -1,5 +1,6 @@
 module driverMatriz(
   chaveSeletora,
+  saidaMux,
   segA_NivelCaixa,
   segA_TipoRega,
   segB_NivelCaixa,
@@ -13,66 +14,59 @@ module driverMatriz(
   segF_NivelCaixa,
   segF_TipoRega,
   segG_NivelCaixa,
-  segG_TipoRega,
-  segmA,
-  segmB,
-  segmC,
-  segmD,
-  segmE,
-  segmF,
-  segmG 
+  segG_TipoRega
 );
 
 input chaveSeletora, segA_NivelCaixa, segA_TipoRega, segB_TipoRega, segB_NivelCaixa, segC_TipoRega, segC_NivelCaixa, segD_TipoRega, segD_NivelCaixa, segE_TipoRega, segE_NivelCaixa, segF_TipoRega, segF_NivelCaixa, segG_NivelCaixa, segG_TipoRega;
-output segmA, segmB, segmC, segmD, segmE, segmF, segmG;
+output saidaMux;
 
 returnMux segA(
   .ifTrue(segA_NivelCaixa),
   .ifFalse(segA_TipoRega),
   .chaveSeletora(chaveSeletora),
-  .saidaMux(segmA)
+  .saidaMux(saidaMux)
 );
 
 returnMux segB(
   .ifTrue(segB_NivelCaixa),
   .ifFalse(segB_TipoRega),
   .chaveSeletora(chaveSeletora),
-  .saidaMux(segmB)
+  .saidaMux(saidaMux)
 );
 
 returnMux segC(
   .ifTrue(segC_NivelCaixa),
   .ifFalse(segC_TipoRega),
   .chaveSeletora(chaveSeletora),
-  .saidaMux(segmC)
+  .saidaMux(saidaMux)
 );
 
 returnMux segD(
   .ifTrue(segD_NivelCaixa),
   .ifFalse(segD_TipoRega),
   .chaveSeletora(chaveSeletora),
-  .saidaMux(segmD)
+  .saidaMux(saidaMux)
 );
 
 returnMux segE(
   .ifTrue(segE_NivelCaixa),
   .ifFalse(segE_TipoRega),
   .chaveSeletora(chaveSeletora),
-  .saidaMux(segmE)
+  .saidaMux(saidaMux)
 );
 
 returnMux segF(
   .ifTrue(segF_NivelCaixa),
   .ifFalse(segF_TipoRega),
   .chaveSeletora(chaveSeletora),
-  .saidaMux(segmF)
+  .saidaMux(saidaMux)
 );
 
 returnMux segG(
   .ifTrue(segG_NivelCaixa),
   .ifFalse(segG_TipoRega),
   .chaveSeletora(chaveSeletora),
-  .saidaMux(segmG)
+  .saidaMux(saidaMux)
 );
 
 endmodule

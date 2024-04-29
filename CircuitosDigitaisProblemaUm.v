@@ -1,20 +1,27 @@
 module CircuitosDigitaisProblemaUm(
- highLevel,
+  highLevel,
   mediumLevel,
   lowLevel,
   temperatura,
   umidadeSolo,
   umidadeAr,
   alarme,
-  chaveSeletora,
-  saidaMux,
   valvulaEntrada,
   gotejamento,
-  aspersao
+  aspersao,
+  chaveSeletora,
+  segA,
+  segB,
+  segC,
+  segD,
+  segE,
+  segF,
+  segG 
 );
 
 input highLevel, mediumLevel, lowLevel, temperatura, umidadeSolo, umidadeAr, chaveSeletora;
-output alarme, saidaMux, valvulaEntrada, gotejamento, aspersao;
+output alarme, valvulaEntrada, gotejamento, aspersao;
+output segA, segB, segC, segD, segE, segF, segG;
 
 wire segA_NivelCaixa, segB_NivelCaixa, segC_NivelCaixa, segD_NivelCaixa, segE_NivelCaixa, segF_NivelCaixa, segG_NivelCaixa;
 wire segA_TipoRega, segB_TipoRega, segC_TipoRega, segD_TipoRega, segE_TipoRega, segF_TipoRega, segG_TipoRega;
@@ -69,7 +76,6 @@ encoderTipoRega(
 //matriz de sete segmentos
 driverMatriz(
   .chaveSeletora(chaveSeletora),
-  .saidaMux(saidaMux),
   .segA_NivelCaixa(segA_NivelCaixa),
   .segA_TipoRega(segA_TipoRega),
   .segB_NivelCaixa(segB_NivelCaixa),
@@ -83,6 +89,13 @@ driverMatriz(
   .segF_NivelCaixa(segF_NivelCaixa),
   .segF_TipoRega(segF_TipoRega),
   .segG_NivelCaixa(segG_NivelCaixa),
-  .segG_TipoRega(segG_TipoRega)
+  .segG_TipoRega(segG_TipoRega),
+  .segmA(segA),
+  .segmB(segB),
+  .segmC(segC),
+  .segmD(segD),
+  .segmE(segE),
+  .segmF(segF),
+  .segmG(segG)
 );
 endmodule
